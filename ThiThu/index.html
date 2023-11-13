@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+
+    </style>
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl" class="container">
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-xxl bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-5 text-white col" href="">
+                    <h5><i class="fa-solid fa-bug"></i> DebugCard.</h5>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand ms-5 text-white col" href="">
+                        <h5><i class="fa-solid fa-power-off"></i> Đăng xuất
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="row mt-5 d-flex ms-5 me-5">
+        <div class="col-sm-6">
+            <form>
+                <h3>Nạp/Rút tiền</h3>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Số thẻ</label>
+                    <input ng-model="searchId" ng-keypress="checkEnter($event)" type="text" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div ng-if="someone">
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label">Chủ thẻ</label>
+                        <input value="{{someone.name}}" type="text" id="disabledTextInput" class="form-control"
+                            placeholder="" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtMoney" class="form-label">Số tiền</label>
+                        <input ng-model="priceNumber" type="text" id="txtMoney" class="form-control" placeholder="0">
+                    </div>
+                    <button ng-click="decreasePrice(someone.id, priceNumber)" type="submit" class="btn btn-primary"><i
+                            class="fa-solid fa-up-right-from-square"></i> Rút tiền</button>
+                    <button ng-click="increasePrice(someone.id, priceNumber)" type="submit" class="btn btn-success"><i
+                            class="fa-solid fa-pen-to-square"></i> Nạp tiền</button>
+                </div>
+                <div ng-if="error">
+                    <div class="mb-3">
+                        <label class="form-label">{{error}}</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">Tài khoản</div>
+                <div class="m-3">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Số thẻ</th>
+                                <th scope="col">Chủ thẻ</th>
+                                <th class="text-end" scope="col">Số dư</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="i in list">
+                                <td>{{i.id}}</td>
+                                <td>{{i.name}}</td>
+                                <td class="text-end">{{i.balance | number : 0}} VNĐ</td>
+                            </tr>
+                            <tr>
+                                <th class="text-center" colspan="2">Tổng</th>
+                                <th class="text-end">{{getTotal() | number : 0}} VNĐ</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="bg-white rounded">
+        <div class="container text-center">
+            <span class="font-weight-light">
+                DebugCard.© 2023 - Thực hiện bởi PS01234 - Nguyễn Văn A
+            </span>
+        </div>
+    </footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fe08cb9b1.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
