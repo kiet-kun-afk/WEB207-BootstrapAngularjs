@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 7</title>
+  <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl as $ctrl">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h4>DANH SÁCH HÀNG HÓA</h4>
+      </div>
+      <div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><a class="text-reset link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="" ng-click="sortBy('name')">SẢN PHẨM</a></th>
+              <th><a class="text-reset link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="" ng-click="sortBy('price')">ĐƠN GIÁ</a></th>
+              <th><a class="text-reset link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="" ng-click="sortBy('sale')">GIẢM GIÁ</a></th>
+              <th><a class="text-reset link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="" ng-click="sortBy('timeSale')">NGÀY</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="i in dsSP | orderBy: kieusapxep: true | limitTo : limit : start">
+              <td>{{i.name | uppercase}}</td>
+              <td>{{i.price | currency : '$' : 2}}</td>
+              <td>{{i.sale | percentage : 2}}</td>
+              <td>{{i.timeSale | date : 'MMMM-dd, yyyy'}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item"><a ng-click="first()" class="page-link"><i class="fa-solid fa-backward-fast"></i></a></li>
+            <li class="page-item"><a ng-click="prev()" class="page-link"><i class="fa-solid fa-backward-step"></i></a></li>
+            <li class="page-item"><a ng-click="next()" class="page-link"><i class="fa-solid fa-forward-step"></i></a></li>
+            <li class="page-item"><a ng-click="last()" class="page-link"><i class="fa-solid fa-forward-fast"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://kit.fontawesome.com/bcd15b30db.js" crossorigin="anonymous"></script>
+  <script src="bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

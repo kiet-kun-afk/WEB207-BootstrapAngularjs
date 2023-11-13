@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            NHẬP LƯƠNG THÁNG 12
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">NHẬP LƯƠNG THÁNG 12</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <form class="row g-3">
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="" class="form-control" placeholder="Mã nhân viên">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="Họ và tên">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <select id="inputClub" class="form-select">
+                                        <option selected>...</option>
+                                        <option>HCM</option>
+                                        <option>HN</option>
+                                        <option>Đà Nẵng</option>
+                                        <option>Tây Nguyên</option>
+                                        <option>Tây Nam Bộ</option>
+                                        <option>Trường Sa</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <input type="" class="form-control" placeholder="Lương">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="" class="form-control" placeholder="Thưởng">
+                                </div>
+                                <div class="col-6">
+                                    <input type="" class="form-control" placeholder="Phụ cấp">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <textarea class="form-control" placeholder="Ghi chú"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light">
+                        <i class="fa-solid fa-file-arrow-down"></i> Lưu
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <i class="fa-solid fa-stop"></i> Hủy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/9fe08cb9b1.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

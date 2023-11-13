@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i
+                    class="fa-solid fa-up-right-from-square fa-rotate-180"></i> CẬP NHẬT</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i
+                    class="fa-solid fa-list"></i> DANH SÁCH</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+            tabindex="0">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-2 col-1"></div>
+                <div class="col-xxl-6 col-xl-8 col-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4><i class="fa-solid fa-up-right-from-square fa-beat-fade"></i> NHẬP LƯƠNG THÁNG 12</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class="row g-3">
+                                <div class="col-6">
+                                    <label for="maNhanVien" class="form-label fw-bold">Mã nhân viên</label>
+                                    <input type="" class="form-control" id="maNhanVien">
+                                </div>
+                                <div class="col-6">
+                                    <label for="hoVaTen" class="form-label fw-bold">Họ và tên</label>
+                                    <input type="text" class="form-control" id="hoVaTen">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputClub" class="form-label fw-bold">Câu lạc bộ</label>
+                                    <select id="inputClub" class="form-select">
+                                        <option selected>...</option>
+                                        <option>HCM</option>
+                                        <option>HN</option>
+                                        <option>Đà Nẵng</option>
+                                        <option>Tây Nguyên</option>
+                                        <option>Tây Nam Bộ</option>
+                                        <option>Trường Sa</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label for="luong" class="form-label fw-bold">Lương</label>
+                                    <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon2">$</span>
+                                    <input type="" class="form-control" id="luong">
+                                    <span class="input-group-text" id="basic-addon2">.00</span>
+                                </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="thuong" class="form-label fw-bold">Thưởng</label>
+                                    <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon2">$</span>
+                                    <input type="" class="form-control" id="thuong">
+                                    <span class="input-group-text" id="basic-addon2">.00</span>
+                                </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="phuCap" class="form-label fw-bold">Phụ cấp</label>
+                                    <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon2">$</span>
+                                    <input type="" class="form-control" id="phuCap">
+                                    <span class="input-group-text" id="basic-addon2">.00</span>
+                                </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="ghiChu" class="form-label fw-bold">Ghi chú</label>
+                                    <textarea class="form-control" placeholder="" id="ghiChu"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-light">
+                                        <i class="fa-solid fa-file-arrow-down"></i>Lưu
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <i class="fa-solid fa-stop"></i> Hủy
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <h6>Vui lòng nhập thông tin cầu thủ</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-2 col-1"></div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-2 col-1"></div>
+                <div class="col-xxl-6 col-xl-8 col-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4><i class="fa-solid fa-list"></i> BẢNG LƯƠNG THÁNG 12</h4>
+                        </div>
+                        <div>
+                            <table class="table table-hover table-bordered mb-auto">
+                                <thead class="text-center align-middle">
+                                    <tr class="table-warning">
+                                        <th scope="col" rowspan="2">MÃ NV</th>
+                                        <th scope="col" rowspan="2">HỌ VÀ TÊN</th>
+                                        <th scope="col" colspan="3">THU NHẬP</th>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <th scope="col">LƯƠNG</th>
+                                        <th scope="col">THƯỞNG</th>
+                                        <th scope="col">PHỤ CẤP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NV100</td>
+                                        <td>Nguyễn Công Phượng</td>
+                                        <td>5000000</td>
+                                        <td>500000</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NV102</td>
+                                        <td>Phan Văn Tài Em</td>
+                                        <td>9000000</td>
+                                        <td>600000</td>
+                                        <td>100000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NV103</td>
+                                        <td>Lê Huỳnh Đức</td>
+                                        <td>7000000</td>
+                                        <td>300000</td>
+                                        <td>200000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <h6>Lương của cầu thủ và huấn luyện viên chuyên nghiệp</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-2 col-1"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/9fe08cb9b1.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

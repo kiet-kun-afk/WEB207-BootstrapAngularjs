@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        input:invalid {
+            border: 2px solid red;
+            background-image: url('anifire.gif');
+            background-position: center right;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl1">
+    <div class="container">
+        <div class="card m-3">
+            <div class="card-header">
+                <h4>TÍNH THƯỞNG TẾT NGUYÊN ĐÁN</h4>
+            </div>
+            <div class="container-fluid">
+                <form name="frmBonus">
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label fw-bold">Họ và tên</label>
+                        <input class="form-control" id="fullname" name="txtFullname" required ng-model="fullname">
+                        <span ng-show="frmBonus.txtFullname.$invalid">Vui lòng nhập họ tên</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="salary" class="form-label fw-bold">Lương</label>
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="salary" min="2000000" name="txtSalary"
+                                    required ng-model="salary">
+                                <span class="input-group-text" id="basic-addon2">VND</span>
+                            </div>
+                            <span ng-show="frmBonus.txtSalary.$invalid">Lương ít nhất 2 triệu</span>
+                        </div>
+                    </div>
+                    <h6 ng-show="frmBonus.$valid" class="text-success">
+                        <i class="fa-solid fa-check-double"></i> HỢP LỆ <i class="fa-solid fa-check-double"></i>
+                    </h6>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Giới tính</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="option" id="opt1" value="NAM"
+                                ng-model="gender">
+                            <label class="form-check-label" for="opt1">
+                                Nam
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="option" id="opt2" value="NU"
+                                ng-model="gender">
+                            <label class="form-check-label" for="opt2">
+                                Nữ
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Độ tuổi</label>
+                        <select class="form-select" ng-model="age" ng-options="x.age for x in ages">
+
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <p class="fs-4">TIỀN THƯỞNG: <span class="fw-bold">{{getResult() | number : 2}}</span> VNĐ</p>
+            </div>
+        </div>
+        <div class="card m-3">
+            <div class="card-header">
+                <h4>TÍNH THƯỞNG TẾT NGUYÊN ĐÁN</h4>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">TÊN HÀNG</th>
+                        <th scope="col">SỐ LƯỢNG</th>
+                        <th scope="col">ĐƠN GIÁ</th>
+                        <th scope="col">THÀNH TIỀN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="i in items" ng-init="i.quantity = 1">
+                        <td><input type="checkbox" ng-model="i.buy"></td>
+                        <td ng-bind="i.name"></td>
+                        <td><input type="number" ng-model="i.quantity" ng-disabled="!i.buy"></td>
+                        <td ng-bind="i.price|currency"></td>
+                        <td ng-bind="i.price*i.quantity|currency"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card-footer">
+                <p class="fs-4 fw-bold">TỔNG TIỀN: {{getAmount()|currency}}</p>
+            </div>
+        </div>
+        <div class="card m-3">
+            <div class="card-header">
+                <h4>THÔNG TIN SINH VIÊN</h4>
+            </div>
+            <div class="container-fluid">
+                <form name="studentInfo">
+                    <div class="mb-3">
+                        <label for="hoten" class="form-label fw-bold">Họ và tên</label>
+                        <input class="form-control" id="hoten" name="txthoten" maxlength="25" required ng-model="hoten">
+                        <span ng-show="studentInfo.txthoten.$invalid">Vui lòng nhập họ tên</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="diem" class="form-label fw-bold">Điểm</label>
+                        <input type="number" class="form-control" id="diem" max="10" name="txtdiem" required
+                            ng-model="diem">
+                        <span ng-show="studentInfo.txtdiem.$invalid">Điểm từ 0-10</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-bold">Email</label>
+                        <input type="email" class="form-control" id="email" name="txtemail" required ng-model="email">
+                        <span ng-show="studentInfo.txtemail.$invalid">Email không đúng định dạng</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="soxe" class="form-label fw-bold">Số xe</label>
+                        <input class="form-control" id="soxe" name="txtsoxe"
+                            pattern="5\d-[A-Z]\d-((\d{4})|(\d{3}\.\d{2}))" required ng-model="soxe">
+                        <span ng-show="studentInfo.txtsoxe.$invalid">Không đúng số xe Sài Gòn</span>
+                    </div>
+                    <h6 ng-show="studentInfo.$valid" class="text-success">
+                        <i class="fa-solid fa-check-double"></i> HỢP LỆ <i class="fa-solid fa-check-double"></i>
+                    </h6>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn border btn-primary {{studentInfo.$valid ? '' : 'disabled'}}">
+                    Lưu
+                </button>
+            </div>
+        </div>
+        <div class="card m-3">
+            <div class="card-header">
+                <h4>CUSTOM VALIDATION</h4>
+            </div>
+            <div class="container-fluid">
+                <form name="custom" class="m-3">
+                    <div class="mb-3">
+                        <label for="numberHere" class="form-label fw-bold">Số</label>
+                        <input class="form-control" id="numberHere" ng-model="number" poly-number>
+                        <p ng-show="showMessage">Số này không chia hết cho 2 và 9</p>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn border btn-primary" ng-click="checkNumber()">
+                    Kiểm tra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fe08cb9b1.js" crossorigin="anonymous"></script>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

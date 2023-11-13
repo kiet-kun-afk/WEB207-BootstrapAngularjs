@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS</title>
+  <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+  <div class="container">
+    <div class="img">
+      <img src="{{sinhVien.photo}}" alt="">
+    </div>
+    <br>
+    <div>
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li>Họ và tên: <input type="text" id="fullname" ng-model="sinhVien.fullname"></li><br>
+        <li>Ngày sinh: <input type="text" id="birthday" ng-model="sinhVien.birthday"></li><br>
+        <li>Giới tính: <input type="text" id="gender" ng-model="sinhVien.gender"></li><br>
+        <li>Điểm trung bình: <input type="text" id="mark" ng-model="sinhVien.mark" required></li><br>
+        <li ng-show="daXepLoai">Xếp Loại Học Lực: {{xepLoaiHocLuc}}</li><br>
+        <button class="btn btn-secondary" ng-click="xepLoai()">Xếp Loại</button>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/bcd15b30db.js" crossorigin="anonymous"></script>
+  <script src="bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="script2.js"></script>
+</body>
+
+</html>

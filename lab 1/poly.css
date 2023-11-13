@@ -1,0 +1,124 @@
+/* header{
+    height: 150px;
+    position: relative;
+}
+.shopping-mall{
+    position: absolute;
+    bottom: 20px;
+    font-variant: small-caps;
+}
+.shopping-mall>h1{
+    font-family: Impact;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 2px black;
+    padding-bottom: 0px;
+    border-bottom: 1px dotted gray;
+    margin: 0px;
+}
+.shopping-mall>h5{
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+nav{
+    height: 30px;
+    background-color: aqua;
+}
+article{
+    background-color: bisque;
+}
+aside{
+    background-color: chocolate;
+}
+article, aside{
+    height: 700px;
+} */
+/* .container{
+    margin: 0 auto;
+}
+.header{
+    height: 100px;
+    position: relative;
+    font-variant: small-caps;
+}
+.header>article>h1{
+    font-family: Impact;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 2px black;
+    padding-bottom: 0px;
+    border-bottom: 1px none gray;
+    margin: 0px;
+}
+.header>article>h5{
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+.menu{
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+}
+.left{
+    background-color: rgb(0, 0, 255);
+}
+.right{
+    background-color: rgb(0, 255, 0);
+}
+.left, .right{
+    padding: 0;
+    height: 700px;
+} */
+.header{
+    font-variant: small-caps;
+}
+.header img{
+    width: 220px;
+}
+.menu{
+    margin: 0 2px;
+}
+.header>article>h1{
+    font-family: Impact;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 2px black;
+    padding-bottom: 0px;
+    border-bottom: 1px none gray;
+    margin: 0px;
+}
+.header>article>h5{
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+.bg-dark, .box{
+    border-radius: 6px;
+}
+.box{
+    margin: 1px auto;
+    padding: 1000px 0;
+    border: 2px solid yellow;
+}
+.cart-aside img{
+    width: 100px;
+}
+.cart-aside ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-variant: small-caps;
+}
+.search-box input{
+    margin: 10px;
+}
+.cart-aside, .search-box, .list-gr{
+    margin: 5px 0 0 0;
+}
+.prod{
+    padding: 5px;
+}
+.prod img{
+    width: 200px;
+}

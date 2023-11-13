@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.css">
+</head>
+
+<body ng-app="myapp3" ng-controller="myctrl3">
+    <div class="container mt-2">
+        <div class="mb-3">
+            <label for="length" class="form-label fw-bold">Chiều dài</label>
+            <input type="number" class="form-control" id="length" ng-model="dai">
+        </div>
+        <div class="mb-3">
+            <label for="width" class="form-label fw-bold">Chiều rộng</label>
+            <input type="number" class="form-control" id="width" ng-model="rong">
+        </div>
+        <div class="mb-3">
+            <label for="area" class="form-label fw-bold">Diện tích</label>
+            <input type="number" class="form-control" id="area" value="{{a}}">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label fw-bold">Chu vi</label>
+            <input type="number" class="form-control" id="perimeter" value="{{p}}">
+        </div>
+        <hr>
+        <button class="btn btn-secondary" ng-click="a = dai * rong; p = (dai + rong) * 2">Calculate</button>
+    </div>
+    <script src="bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

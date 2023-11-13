@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS</title>
+  <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container" ng-app="myapp3">
+    <table class="table table-bordered table-condensed" ng-controller="myctrl3">
+      <tr>
+        <th>Hình</th>
+        <th>Họ và tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Điểm</th>
+      </tr>
+      <tr ng-repeat="student in students">
+        <td><img src="{{student.photo}}" alt="" width="100px"></td>
+        <td>{{student.fullname}}</td>
+        <td>{{student.birthday}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.mark}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="https://kit.fontawesome.com/bcd15b30db.js" crossorigin="anonymous"></script>
+  <script src="bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
